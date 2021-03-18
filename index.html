@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6K085Z3V36"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6K085Z3V36');
+    </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>연파고의 코인추천</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body class="container">
+    <article class="start mt-5">
+        <img src="img/open.png">
+        <button type="button" class="open-btn btn-primary mt-5" onclick='start();'>테스트 시작하기</button> 
+        <h3 class="warning mt-3">투자 권유가 절대 아님을 알려드립니다. 재미로만 봐주세요</h3>
+    </article>
+    <article class="question">
+        <h2 id="title" class="question-text text-left mt-5">문제</h2>
+        <input id="type" type="hidden" value="EI">
+        <button id="A" type="button" class="btn btn-outline-primary mt-4">Primary</button>
+        <button id="B" type="button" class="btn btn-outline-primary mt-3">Primary</button>
+        <div class="progress mt-5">
+            <div class="progress-bar" role="progressbar" style="width: calc(100/12*1%)"></div>
+        </div>
+    </article>
+    <article class="result">
+        <img id="img" src="doge.jpg" alt="coin">
+        <h2 id="coin" class="coin-name text-center mt-4">코인이름</h2>
+        <h3 id="explain1" class="explain1 text-center">코인 별명</h3>
+        <h3 id="explain2" class="explain2 text-center mt-4">코인 별명</h3>
+        <a class="retest mt-3" href="https://www.yonpago.com">
+            <img src="img/retest.png">
+        </a>
+        
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="share mt-3 addthis_inline_share_toolbox"></div>
+            
+    </article>
+
+    <article class="commerce">
+        <img src="img/commerce.png" alt="">
+    </article>
+
+    <article class="commerce2">
+        <a href="https://www.notion.so/418dd58c783d40b0ba04240847a5d23f">
+            <img src="img/commerce2.png">
+        </a>
+    </article>
+
+    <article class="kakao_ad">
+        <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-5AghGpwVcXpZ9YOh" 
+    data-ad-width   = "320" 
+    data-ad-height  = "100"></ins> 
+   <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </article>
+
+    <article class="yonpago">
+        <a href=""
+    </article>
+
+    <article class="commerce1 mt-2"> 
+        <a href="https://www.piopik.com/download">
+        <img src="img/commerce1.png" alt="">
+    </a></article>
+
+    <article class="commerce3 mt-2">
+        <a href="http://click.gl/hingu">
+        <img src="img/commerce3.png">
+        </a>
+    </article>
+
+    <article class="commerce4 mt-2">
+        <a href="https://coinjab.com/ko?utm_source=yonpago&utm_medium=banner&utm_campaign=yonpago_0115">
+        <img src="img/commerce4.gif">
+        </a>
+    </article>
+   
+
+    <input type="hidden" id="EI" value="0">
+    <input type="hidden" id="SN" value="0">
+    <input type="hidden" id="TF" value="0">
+    <input type="hidden" id="JP" value="0">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script>
+        var num = 1;
+        var q = {
+            1: {"title": "나의 꿈에 더 가까운 직업은?", "type": "EI", "A": "안정적으로 월급이 나오고 정년이 보장되어 있는 기업의 직원", "B": "불안정하고 미래를 알 수 없지만 성공한다면 큰돈을 벌 수 있는 창업가"},
+            2: {"title": "이번 주 일요일 모처럼 휴식 시간을 갖고자 한다. 나에게 더 맞는 활동은?", "type": "EI", "A": "집에서 편안하게 휴식을 하며 독서를 하거나 과자를 먹으며 넷플릭스를 시청", "B": "밖에서 사람들과 함께 스포츠나 레저를 즐긴다"},
+            3: {"title": "만 원을 넣으면 50%의 확률로 돈이 사라지거나 이만 원이 되어 나오는 기계가 있다. 당신의 선택은?", "type": "EI", "A": "만 원도 소중한 돈이다 지킬 수 있다면 지키는 것이 맞다", "B": "인생은 승부사다! 확률이 적은 것도 아니고 반반이면 해볼 만 하다"},
+            4: {"title": "친구들과 함께 술집에 들어와서 안주를 고르고 있다. 나의 스타일은?", "type": "SN", "A": "술맛이 좋아지려면 안주 또한 내 입맛에 맞아야 한다. 메뉴판을 들고 주도적으로 선정한다", "B": "친구가 메뉴를 고르도록 내버려 둔다. 어차피 술이 메인이니까"},
+            5: {"title": "사람들이 요즘 넷플릭스에서 유행하는 드라마에 대해 이야기 한다. 나의 선택은?", "type": "SN", "A": "나는 취향이 확실해서 원하는 드라마만 본다. 굳이 유행을 따라갈 필요는 없다", "B": "유행에 뒤처지기 싫다. 사람들과 대화하려면 나도 그 드라마를 보는 편이 좋겠다"},
+            6: {"title": "친구가 나를 보더니 살쪘다고 한다. 나의 반응은?", "type": "SN", "A": "어쩌라고. 등 따시고 배부르니 살이 찌는 것이지", "B": "헉 나 진짜 살쪘나보다. 내일 당장 헬스장 등록을 해야 하나?"},
+            7: {"title": "학교에서 과제가 나왔다. 기한을 일주일. 나의 선택은?", "type": "TF", "A": "플래너에 마감일을 적어놓고 계획을 세워 과제를 한다", "B": "일단 놀 수 있는 시간이 6일이나 더 생겼다. 과제는 원래 당일에 하는 것"},
+            8: {"title": "나의 인생관에 더 가까운 것은?", "type": "TF", "A": "꾸준한 운동과 절제를 통해 육체를 가꾸는 것이 나의 행복이다", "B": "지금 바로 이 순간 먹고 싶은 음식을 먹을 수 있다는 것이 삶의 행복이다"},
+            9: {"title": "나의 일처리 방식에 더 가까운 것은?", "type": "TF", "A": "목표를 분명히 설정하고 계획대로 움직인다", "B": "상황에 따라 유연하게 대처하는 것이 더 중요하다"},
+            10: {"title": "인터넷 쇼핑몰에서 필요한 물품을 구매하고자 한다. 무엇이 더 중요한가?", "type": "JP", "A": "감성을 자극하는 디자인 요소", "B": "디자인은 좀 구리더라도 실용성이 좋아야 한다"},
+            11: {"title": "친구가 요즘 어려운 일에 빠져 고통을 호소하고 있다. 나의 반응은?", "type": "JP", "A": "친구를 따뜻하게 위로하며 공감해준다", "B": "친구의 상황을 면밀하게 분석하여 해결책을 제시한다"},
+            12: {"title": "함께하고 싶은 반려동물은?", "type": "JP", "A": "도도한 매력이 있는 야옹이", "B": "애교 만점 댕댕이"}
+        }
+        var result = {
+            "ENTP": {"coin": "비트코인", "explain1": "\"모든것의 시작\"", "explain2": "모르는 사람이 없을 정도로 심한 변동성으로 유명한 비트코인. 전 세계 사람들을 코인 신드롬에 빠지게 만든 장본인이다. 금융을 넘어 문화적인 부분에서도 엄청난 충격과 영향력을 행사하고 있는 이 비트코인은, 17년 대떡락 이후로 다시 한번 가격 전성기를 만들며 사람들을 미치고 팔짝 뛰게 만들고 있다. 들고 있는 사람들은 '이번엔 다르다! 가즈아~'를 외치게 하고, 안들고 있는 사람들은 '그때 살걸'  혹은 '저 포도는 신 포도다'를 연신 외치게 하는 이 모든 사단의 원흉. 근데 기관들이 연신 사재끼는 거 보면 진짜 이번엔 다를지도 모름", "img": "img/bitcoin.png"},
+            "ENTJ": {"coin": "네오", "explain1": "\"중국판 이더리움\"", "explain2": "코인 사랑에 둘째가라면 서러워하는 중국에서 서방권의 이더리움에 대항하고자 만들어낸 스마트 컨트랙트 코인이다. 하지만 역시 '중국' 해버리면서, 제대로 돌아가지도 않는 네오를 이용해 많은 알트코인을 찍어낸 뒤 투자자 돈을 버억하고 개발자 및 임원들은 갑부가 되었다고 한다. 이후에 네오 대표의 친구가 온톨로지라는 새로운 스마트 컨트랙트 코인을 들고 와서 다시 한번 투자자들의 돈을 버억하고 떠나갔다. 그래도 중국을 대표하는 코인이다 보니 중국에서 호재가 터졌다 하면 가끔씩 발작하며 가격이 오른다. ", "img": "img/neo.png"},
+            "ENFP": {"coin": "이더리움 클래식", "explain1": "\"이더리움의 집나간 형\"", "explain2": "사실 현재의 이더리움은 이더리움 클래식으로부터 독립한 코인이다. 이더리움 발행 이후 치명적인 결함이 생겨 커뮤니티 내부적으로 이더리움의 구조를 바꿔야 한다는 목소리가 컸는데, 이에 반대하여 그대로 유지해야 한다는 세력 또한 만만치 않아 결국 서로 찢어져 노선을 달리하게 되었다. 구조를 바꿔 현재 잘나가고 있는 것이 비탈릭의 이더리움이고, 있는 그대로 남겨진 것이 이더리움 클래식. '클래식'이라는 이름은 찢어진 이후 구분을 위해 붙여졌다. 당연히 이더리움의 위상에 묻힌 채 간신히 이름만 유지하고 있으며 아주 가끔 '돌아온 탕아'가 되어 가격 펌핑이 이뤄지곤 한다.", "img": "img/etc.png"},
+            "ENFJ": {"coin": "비트코인 캐시", "explain1": "\"드레곤 슬레이어\"", "explain2": "중국의 비트코인 채굴 세력 중 하나인 우지한이 회사가 가진 자본력을 통해 비트코인으로부터 체인을 독립 시켜 만든 코인이다. 17년 코인 광풍 당시 '드래곤 슬레이어'라는 중2병 느낌이 다분한 코드네임을 내걸고 비트코인을 잡기 위해 중국 자본을 이용한 가격 펌핑을 했지만, 결국엔 비트코인을 이기지 못하고 현재 메이저 알트코인이라는 간판만 겨우 유지하고 있다. 빗썸 거래소가 갑자기 셧다운 되어 수많은 피해자를 만들었던 장본인이기도 하다. '좌우지 장지지 우지한의 자존심을 건 역대급 펌핑이 시작된다'와 같은 많은 밈을 생산하기도 했다.", "img": "img/bch.png"},
+            "ESTP": {"coin": "이더리움", "explain1": "\"알트 코인들의 대장\"", "explain2": "천재 개발자 비탈릭이 비트코인에 스마트 컨트랙트 기능을 붙여, 차세대 인터넷의 가능성을 열게 된 코인. 비트코인 트렌젝션에 코드를 심을 수 있게 하여 단순 화폐 전송 뿐 아니라 다양한 기능들이 작동할 수 있도록 만들었다. 덕분에 한탕 해 먹으려는 작자들이 온갖 말도 안 되는 기능들을 붙여가며 개미들한테 코인을 팔아먹는 진풍경이 벌어졌다. 하지만 이런 일은 닷컴 버블 때도 있었고, 이러한 과도기를 거쳐야 시장이 성숙해진다고 사람들은 믿고 있다. 이더리움 재단을 포함한 전 세계의 유능한 개발자들이 머리를 맞대고 이더리움을 발전시키고 있다. ", "img": "img/eth.png"},
+            "ESTJ": {"coin": "라이트코인", "explain1": "\"인터넷 은\"", "explain2": "'비트코인이 인터넷 금이라면 라이트 코인은 인터넷 은'이라는 주장을 하는 코인이다. 실제로 전송 속도가 느린 비트코인의 한계를 라이트닝 네트워크라는 기술을 사용하여 극복하고자 하였다. 하지만 개발자인 찰리 리가 라이트코인 가격이 폭등했을 때 자신의 지분을 싹 팔아치운 게 들통나자 투자자들은 라이트 코인의 진정성에 대해 의심을 하기 시작했다. 만들어진 지 오래된 코인이라 그런지 커뮤니티에서는 나름 메이져 알트코인 취급을 받고 있으며, 대폭락 이후 비트코인을 따라서 꾸준히 가격이 올라가고 있긴 하다.", "img": "img/ltc.png"},
+            "ESFP": {"coin": "질리카", "explain1": "\"코인계의 범생이\"", "explain2": "이더리움의 확장성 한계점을 '네트워크 샤딩'이라는 기술을 통해 극복하고자 하는 코인이다. 홀더들은 맨날 '질리카 들고 있으면 질려카~'하며 오르지 않는 가격에 대해 한탄하지만, 실제로는 내부적으로 일도 열심히 하고 가격도 꾸준하게 우상향을 보여주고 있는 몇 안되는 우량코인. 하지만 급등을 원하는 코인 투자자들에겐 느린 가격 상승이 성에 차지 않아 오래 못 들고 있는다. 그리고 아무리 일 잘하고 좋은 코인이라 해도 비트 가격이 꺾이면 나락으로 가버리는 운명은 여타 알트코인과 동일하다.", "img": "img/zil.png"},
+            "ESFJ": {"coin": "스텔라 루멘", "explain1": "\"이름이 예뻐서 샀어요\"", "explain2": "리플과 함께 코인을 처음 접하는 사람들이 가장 많이 사는 코인 중 하나이다. 이유를 들어보면 놀랍게도 '이름이 이쁘고 가격이 싸서' 리플로부터 독립한 코인이라 그런지 가격 상승 하락이 리플과 비슷할 때가 많다. 뭔가 있어 보이지만 실상은 중국에서 한탕 해 먹으려고 만든 코인. 하지만 로켓 모양의 로고와 이쁜 이름, 그리고 가끔 오는 화끈한 펌핑 덕분에 많은 투자자로 하여금 희망 회로를 돌리게 한다. ", "img": "img/xlm.png"},
+            "ISTP": {"coin": "트론", "explain1": "\"마케팅 코인의 대명사\"", "explain2": "오로지 창시자 '저스틴 썬'의 아가리 마케팅으로 전 세계적으로 트론의 위상을 떡상시킨 케이스. 기술 개발을 잘 하고 있는지는 모르겠으나 코인 발행 당시부터 온갖 big announcement와 다른 회사와의 콜라보레이션으로 사람들에게 트론을 홍보했다. 덕분에 트론 가격은 하늘 높은 줄 모르고 치솟았고 사람들은 저스틴 썬을 향해 '마케팅의 신'이라는 별명을 지어줬다. '마윈의 수제자'라는 별명을 가지고 활동했으며 (같이 찍은 사진이 있긴 하나 진짜 제자인지는 모름) 얼마 전에는 워렌 버핏과의 저녁 식사도 하는 등 사람들이 어떤 마케팅을 좋아하는지 정확하게 꿰뚫고 있다. 사짜 냄새가 풀풀 나지만 북경대 출신의 중국 엘리트.", "img": "img/tron.png"},
+            "ISTJ": {"coin": "이오스", "explain1": "\"부모 없는 코인\"", "explain2": "트위치 랄로 방송에서 나온 드립인데, x같아서 하는 막말이 아니라 진짜 부모가 없음. 만든 개발자가 댄 라리머라는 사람인데 얼마 전에 CTO자리 내놓고 나가버리면서 공식 '고아 코인'이 됐다. 이더리움 잡겠다고 코인에 민주주의를 접목시킨 참신한 컨셉으로 세상에 나왔지만, 중국에서 자본력으로 장악하는 바람에 처참하게 실패. 뽀삐라는 정감가는 별명을 가지고 있으나 짤방들 구글에 쳐보면 웃음벨이 따로 없다.", "img": "img/eos.png"},
+            "ISFP": {"coin": "비트코인 숏", "explain1": "\"살려주세요\"", "explain2": "비트코인 숏, 즉 비트코인이 하락한다는 것에 배팅한 사람들이 있다. 온갖 기술적 분석을 들이밀며 '피 냄새가 나는 거 같은데 나만 그런 거야~? 하면서 영화 빅쇼트 마이클 버리 빙의하지만, 정작 숏 버튼을 누를 때마다 돈이 파쇄되고 있는걸 눈치채지 못하고 있는 듯 하다. 몇 번 먹은 거 가지고 '난 아닌데? 난 벌었는데?' 하지만 파멸적 상승장에 숏충이가 된다면 결국엔 뚝배기 날아간다. 어떻게 아냐고? 이거 만든놈이 그랬음", "img": "img/short.png"},
+            "ISFJ": {"coin": "비트코인 고배율 롱숏", "explain1": "\"계왕권 100배\"", "explain2": "코인의 변동성마저 너무 시시한 나머지 레버리지를 50배 100배로 당겨서 거래하는 사람들이 있다. 전자화폐 갤러리 등지에 서식하며, 매일같이 누가 더 상남자 매매를 하는지 겨룬다. 매매할 때마다 분출되는 아드레날린과 도파민에 찌든 나머지 정상적인 매매를 못할 때가 많으며, 몇 번 크게 먹는다 해도 결국엔 청산당해서 계좌가 녹아버린다. 선물 커뮤니티에 호기심 많은 뉴비들이 매번 '100불의 모험~' 하면서 소액 고배로 돈 뿔리는거 자랑하지만 한 달도 못 가서 인원 물갈이된다. 선물 커뮤에서 오래 살아남는 애들은 대부분 고액 저배로 하는 사람들", "img": "img/high.png"},
+            "INTP": {"coin": "에이다", "explain1": "\"고마워요 한국인\"", "explain2": "이더리움 재단 출신의 찰스 호킨스가 만든 코인으로, 17년 비트코인 광풍 당시 일본 ATM에 붙여진 에이다 스티커를 보고 한국인들은 '에이다는 일본인들이 가장 사랑하는 코인'이라는 생각을 갖게 되었다. 하지만 알고 보니 에이다를 가장 사랑하는 건 한국인들이었고, 이들 대부분이 에이다 초고점에 물려서 피눈물을 쏟았다. 더욱 골때리는 건 에이다가 곤두박질 친 뒤 찰스 호킨스가 한국에 와서 먹방을 찍으며 행복해 하는 자신의 모습을 SNS에 올렸는데, 그걸 본 투자자들은 분노를 금치 못했다고 한다.", "img": "img/ada.png"},
+            "INTJ": {"coin": "리플", "explain1": "\"중력의 영향을 받는 코인\"", "explain2": "'리또속', '리삼딱' 등 어떻게든 가격이 300원으로 회귀하려는 성질 때문에 많은 투자자들의 속을 태우는 코인이다. 코인 입문자들이 가장 사랑하는 마성의 코인이기도 한데 그 이유는 '이름이 이뻐서', 혹은 '가격이 싸서 나중에 가격이 많이 오를 것 같아서'이다. 하지만 매일같이 재단이 팔아재끼는통에 가격은 오를 기미를 보이지 않고, 최근에 기적적으로 800원까지 상승했으나 미국 SEC한테 뚜까맞고 다시 300원으로 회귀했다. 코인 처음 시작하는 사람한테 '너 뭐샀어?' 물어보면 열에 대여섯이 '리플' 이라고 대답하는 마법 같은 코인. ", "img": "img/xrp.png"},
+            "INFP": {"coin": "왕뚜껑코인", "explain1": "\"이만한 스캠이 없다\"", "explain2": "물론 모든 알트 홀더들이 자기가 들고 있는 코인이 제일 스캠이라 말하지만 왕뚜껑 코인은 진짜 이름부터 골때린다. 온갖 코인들이 생겨남과 동시에 코인 거래소들도 우후죽순 생기기 시작하였는데, 그 중 코인을 자체적으로 찍어내고 펌핑시키는 스캠 거래소들도 많이 생겨났다. 왕뚜껑 코인은 그런 스캠 거래소중 올스타빗이라는 거래소에서 만들어졌는데, 20000%가 오르는 말도 안되는 상황을 만들어 냈다. 물론 그 거래소에서 수익을 낸 사람들은 소수이며, 거래소 대표는 현재 사기죄로 17년 징역 판결을 받았다. 이런거 사는 정도의 능지면 코인 접는게 맞다", "img": "img/wtc.png"},
+            "INFJ": {"coin": "도지코인", "explain1": "\"코인계의 마스코트\"", "explain2": "일론 머스크의 트윗에도 몇 번 올라올 정도로 코인 투자자들의 귀여움을 받고 있는 존재. 펀더멘탈의 존재 자체가 의심되지만, 귀여운 시바견을 브랜딩에 사용하여 수 많은 짤과 밈을 탄생시키게 되었다. 발행 당시 1원도 되지 않는 값싼 가격에 사람들이 재미로 매수하기도 했는데, 광풍이 끝나기 직전 가격이 폭등하는 바람에 '도지코인 마저 오르는 장' 이라는 광풍 사망 플래그를 만들게 되었다. 아직도 투자자들 사이에서, 도지코인이 오르면 상승장의 끝물이다 라는 말이 회자된다. ", "img": "img/doge.png"}
+        }
+        function start() {
+            $(".start").hide();
+            $(".question").show();
+            next();
+        }
+        $("#A").click(function(){
+            var type = $("#type").val();
+            var preValue = $("#"+type).val();
+            $("#"+type).val(parseInt(preValue)+1);
+            next();
+        });
+        $("#B").click(function(){
+            next();
+        });
+        function next() {
+            if (num==13) {
+                $(".question").hide();
+                $(".result").show();
+                var mbti = "";
+                ($("#EI").val() < 2) ? mbti+="I" : mbti+="E";
+                ($("#SN").val() < 2) ? mbti+="N" : mbti+="S";
+                ($("#TF").val() < 2) ? mbti+="F" : mbti+="T";
+                ($("#JP").val() < 2) ? mbti+="P" : mbti+="J";
+                $("#img").attr("src", result[mbti]["img"]);
+                $("#coin").html(result[mbti]["coin"]);
+                $("#explain1").html(result[mbti]["explain1"]);
+                $("#explain2").html(result[mbti]["explain2"]);
+            } else {
+                $(".progress-bar").attr('style','width: calc(100/12*'+num+'%)');
+                $("#title").html(q[num]["title"]);
+                $("#type").val(q[num]["type"]);
+                $("#A").html(q[num]["A"]);
+                $("#B").html(q[num]["B"]);
+                num++;                
+                }
+            }
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-600001fcd5382080"></script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+.warning {
+  font-family: "AppleSDGothicNeoB00";
+  font-size: 12px;
+}
+
+.start,
+.question {
+  width: 360px;
+  margin: 0 auto;
+  margin-top: 120px;
+}
+
+.question-text {
+  color: #265bbd;
+  font-size: 28px;
+}
+
+.open-btn {
+  background-color: #032d7a;
+  font-family: "AppleSDGothicNeoB00";
+  height: 45px;
+}
+
+.btn {
+  height: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.question {
+  display: none;
+  font-family: "AppleSDGothicNeoEB00";
+}
+
+.result {
+  display: none;
+  width: 360px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.coin-name {
+  font-family: AppleSDGothicNeoEB00;
+  font-size: 30px;
+}
+
+.explain1 {
+  font-family: AppleSDGothicNeoEB00;
+  font-size: 20px;
+  color: #585858;
+}
+
+.explain2 {
+  font-family: AppleSDGothicNeoB00;
+  font-size: 15px;
+  line-height: 25px;
+  color: #585858;
+}
+
+.share {
+  margin: 0 auto;
+  width: 360px;
+  margin-left: 30px;
+}
+
+.commerce2 {
+  width: 360px;
+  margin: 0 auto;
+}
+
+.kakao_ad {
+  width: 360px;
+  margin: 0 auto;
+}
+
+.commerce {
+  width: 360px;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.commerce1 {
+  width: 360px;
+  margin: 0 auto;
+}
+
+.commerce3 {
+  width: 360px;
+  margin: 0 auto;
+}
+
+.commerce4 {
+  width: 360px;
+  margin: 0 auto;
+}
